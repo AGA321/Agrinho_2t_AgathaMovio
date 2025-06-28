@@ -6,29 +6,41 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #222;
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+  background-color: #A7D477; /* Cor de fundo mais clara */
+  color: #333; /* Cor do texto mais escura */
+  line-height: 1.7; /* Espaçamento de linha ligeiramente maior */
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease; /* Transição suave para links */
+}
+
+a:hover {
+  color: #007bff; /* Cor do link ao passar o mouse */
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 8px; /* Cantos arredondados para imagens */
 }
 
 /* HEADER */
 header {
-  background-color: #003366;
+  background-color: #42855B; /* Verde vibrante para o cabeçalho */
   color: white;
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+header h1 {
+  font-size: 2.5rem; /* Tamanho maior para o título principal */
+  margin-bottom: 1rem;
 }
 
 nav ul {
@@ -36,74 +48,151 @@ nav ul {
   justify-content: center;
   flex-wrap: wrap;
   list-style: none;
-  gap: 1.2rem;
-  margin-top: 1rem;
+  gap: 1.5rem; /* Aumenta o espaçamento entre os itens do menu */
+  margin-top: 1.5rem;
 }
 
 nav a {
   color: #ffffff;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo sutil ao passar o mouse */
 }
 
 /* MAIN */
 main {
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 1000px; /* Largura máxima um pouco maior */
+  margin: 2.5rem auto; /* Aumenta margem superior/inferior */
+  padding: 0 1.5rem; /* Aumenta o padding lateral */
 }
 
 section {
-  margin-bottom: 2rem;
+  background-color: #fff; /* Fundo branco para as seções */
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 10px; /* Cantos mais arredondados */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); /* Sombra mais pronunciada */
+}
+
+section h2 {
+  color: #28a745; /* Cor do título da seção */
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+}
+
+section p {
+  margin-bottom: 1rem;
+}
+
+section ul {
+  list-style: disc; /* Marcadores de lista */
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+section ul li {
+  margin-bottom: 0.5rem;
 }
 
 .imagem-link {
-  display: inline-block;
+  display: block; /* Mudei para block para melhor controle de layout */
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 2rem; /* Aumenta a margem superior */
+  color: #007bff; /* Cor do texto do link da imagem */
+  font-weight: bold;
 }
 
 .imagem-link img {
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra mais forte para a imagem */
+  transition: transform 0.4s ease; /* Transição mais suave e longa */
 }
 
 .imagem-link:hover img {
-  transform: scale(1.03);
+  transform: scale(1.05); /* Efeito de zoom mais pronunciado */
 }
 
 /* BOTÃO */
 button {
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #003366;
+  margin-top: 1.5rem; /* Aumenta margem superior */
+  padding: 0.8rem 1.8rem; /* Aumenta o padding do botão */
+  background-color: #007bff; /* Cor azul para o botão */
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px; /* Cantos mais arredondados */
   cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #0055aa;
+  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de leve levantamento */
 }
 
 /* FOOTER */
 footer {
-  background-color: #222;
+  background-color: #42855B; /* Cor mais escura para o rodapé */
   color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
+  padding: 1.5rem;
+  margin-top: 4rem; /* Aumenta a margem superior */
+  font-size: 0.9rem;
 }
 
 /* RESPONSIVO */
-@media (max-width: 600px) {
+@media (max-width: 768px) { /* Ponto de quebra ajustado para tablets */
   nav ul {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
   }
 
   button {
-    width: 100%;
+    width: auto; /* Permite que o botão se ajuste ao conteúdo */
+    display: block; /* Garante que o botão ocupe sua própria linha */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) { /* Ponto de quebra ajustado para celulares */
+  header {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  nav a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
   }
 }
